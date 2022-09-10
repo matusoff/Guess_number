@@ -1,4 +1,3 @@
-#Guess a number-v2
 import random
 print("Welcome to the Number Gessing Game!\nI'm thinking of a number between 1 and 100")
 
@@ -8,6 +7,7 @@ print(f"Psss.. the answer is {answer}")
 #global variables
 EASY_TURNS = 10
 HARD_TURNS = 5
+
 
 def set_complexity():
     level = input("Choose a difficulty. Type 'easy' or 'hard': ")
@@ -29,14 +29,10 @@ def compare(guess, answer):
 
 def play_game():
     turns = set_complexity()
-    
-    # guess = int(input("Make a guess: "))
     guess = 0
     while guess != answer:
-        print(f"You have {turns} attempts remaining to guess the number")
-             
+        print(f"You have {turns} attempts remaining to guess the number")     
         turns -= 1
-        
         guess = int(input("Make a guess: "))        
         compare(guess, answer) 
         if turns == 0:
